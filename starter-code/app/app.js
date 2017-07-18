@@ -7,11 +7,9 @@
     console.log(catObjectList.length);
 
     for(i=0; i < catObjectList.length; i++){
-      $("#cats").append("<li>").append(catObjectList[i].name + ' - ' + catObjectList[i].note);
+      $("#cats").append("<li>" + catObjectList[i].name + ' - ' + "<em>" + catObjectList[i].note + "</li>");
     }
     });
-    
-
 
     $("form").on("submit", function(event){
       event.preventDefault();
@@ -28,7 +26,7 @@
           console.log(data);
           var newCatData = JSON.parse(data);
 
-          $("#cats").append("<li>").append(newCatData.name + ' - ' + newCatData.note);
+          $("#cats").append("<li>" + newCatData.name + ' - ' + "<em>" + newCatData.note + "</li>");
         });
     });  
     
